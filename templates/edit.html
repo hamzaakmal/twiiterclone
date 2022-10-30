@@ -1,0 +1,33 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+
+<section id="post_section">
+
+    <section class="post_form">
+        <div class="home">
+            <img src="{% static 'img/planet-earth.png'%}">
+            <h2>Edit</h2>
+        </div>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Name" value="{{post.name}}" required>
+            <textarea name="body" placeholder="Tell us anything" required>{{post.body}}</textarea>
+            <img id="post_image" src="{{post.image.url}}" alt="">
+
+            <div class="align">
+            <input type="file" value="choose file" name="image">
+            <input type="submit" value="Tweet" id="tweet">
+        </div>
+        </form>
+    </section>
+    
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="{% static 'js/posts.js' %}"></script>
+</section>
+
+
+
+
+
+
+{% endblock %}

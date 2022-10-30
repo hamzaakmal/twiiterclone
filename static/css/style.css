@@ -1,0 +1,149 @@
+/*
+Common
+***************************/
+html,
+body {
+    height: 100%;
+    font-family: sans-serif;
+}
+
+• content {
+    max-width: 600px;
+    height: 100%;
+    margin: 0 auto;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+/*
+Post
+***************************/
+.home {
+    display: flex;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 13px;
+}
+.posts{
+    border: 1px solid #ccc;
+}
+
+.home img{
+    width:52px;
+    margin-right: 15px;
+}
+.home p{
+    font-family: monospace;
+    font-size: 28px;
+}
+#post_section{
+    max-width: 600px;
+    margin: 0 auto;
+}
+.post_form {
+    padding: 20px 40px;
+    border: 1px solid #ccc;
+}
+
+.post_form input {
+    width: 70%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.post_form textarea {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.posts ul {
+    padding: 0;
+}
+
+.posts li {
+    position: relative;
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    padding: 20px 40px;
+    list-style: none;
+}
+
+.posts li .menu_icon {
+    width: 20px;
+    position: absolute;
+    right: 30px;
+    top: 18px;
+
+}
+
+.posts li .menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 15px;
+    border: 1px solid #ccc;
+    background-color: #ccc;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 3px;
+}
+
+.posts li .menu a {
+    text-decoration: none;
+}
+
+#logo {
+    flex-basis: 15%;
+}
+
+#logo img {
+    width: 55px;
+    margin-right: 10px;
+
+}
+#post_image{
+    width: 80%;
+    border-radius: 20px;
+}
+.posts li .name_body {
+    flex-basis: 85%;
+}
+
+.posts li .name_body .name {
+    font-weight: bold;
+}
+
+.posts li .name_body .datetime {
+    color: gray;
+}
+.like_count{
+    display: flex;
+    align-items: center;
+    
+}
+
+.like_count img{
+    margin-right: 10px;
+}
+.align{
+    display: flex;
+    gap:5%;
+}
+
+#tweet{
+    background-color: dodgerblue;
+    border-radius: 10px;
+    color: white;
+    width: 20%;
+}
+
+@media screen and (max-width: 500px) {
+    .posts li .name_body .name {
+        font-size: 20px;
+    }
+
+}
+

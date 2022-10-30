@@ -1,0 +1,55 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+
+<section id="post_section">
+
+    <section class="post_form">
+        <div class="home">
+            <img src="{% static 'img/planet-earth.png'%}">
+            <p>Home</p>
+        </div>
+        <form action="/" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div id="logo">
+                <img src="{% static 'img/user.png'%}">
+            </div>
+            <input type="text" name="name" placeholder="Name" required>
+            <textarea name="body" placeholder="Tell us anything" required></textarea>
+            <div class="align">
+            <input type="file" value="choose file" name="image">
+            <input type="submit" value="Tweet" id="tweet">
+        </div>
+        </form>
+    </section>
+    <section class="posts">
+        <ul>
+            {% for post in posts reversed%}
+            <li>
+                <img class="menu_icon js-menu-icon" src="{% static 'img/menu.png' %}">
+                <div class="menu">
+                    <a href="/delete/{{ post.id }}/">Delete</a><br><br>
+                    <a href="/edit/{{ post.id }}/">Edit</a>
+                </div>
+                <div id="logo">
+                    <img src="{% static 'img/user.png'%}">
+                </div>
+                <div class="name_body">
+                    <div class="name">{{ post.name }}</div>
+                    <div class="datetime">{{ post.created_at }}</div>
+                    <p>{{ post.body }}</p>
+                    <img id="post_image" src="{{ post.image.url }}"><br>
+                    <div class="like_count">
+                    <a href="/like/{{post.id}}/">
+                    <img style="width: 20px" src="{% static 'img/heart.png' %}"></a>
+                    <p>{{ post.like }}</p>
+                </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="{% static 'js/posts.js' %}"></script>
+</section>
+
+{% endblock %}
